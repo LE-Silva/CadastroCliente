@@ -18,8 +18,10 @@ namespace CadastroCliente
             //Label, Textbox, Combobox, RadioButton, Checkbox, Button
             //Codigo, Descricao, Status, CPF, TP pessoa, Cliente Premium
 
-            var listaClientes = new List<Cliente>();
+            var listaClientes = new BindingList<Cliente>();
             var tiposPessoa = new string[] {"Masculino", "Feminino", "Juridico"};
+
+            dgvClientes.DataSource = listaClientes;
 
             cbTpPessoa.DataSource = tiposPessoa;
             cbTpPessoa.SelectedIndex = -1;
@@ -47,9 +49,9 @@ namespace CadastroCliente
             {
                 alterarStatusCampos();
                 listaClientes.Add(new Cliente(txtCodigo.Text, txtNome.Text, mtxtCPF.Text, cbTpPessoa.Text, chkCliPremium.Checked, true));
-                dgvClientes.DataSource = listaClientes;
                 limparCampos();
             }
+
 
             void txtCodigo_LostFocus(object sender, EventArgs e)
             {
@@ -59,6 +61,7 @@ namespace CadastroCliente
                     txtCodigo.Focus();
                 }
             }
+
             void cbTpPessoa_SelectedIndexChanged(object sender, EventArgs e)
             {
                 if (cbTpPessoa.Text == "Juridico")
@@ -75,7 +78,6 @@ namespace CadastroCliente
                 }
                     
             }
-
 
             void alterarStatusCampos()
             {
@@ -101,6 +103,10 @@ namespace CadastroCliente
                 rbtnAtivo.Checked = false;
                 rbtnInativo.Enabled = false;
                 chkCliPremium.Checked = false;
+            }
+            void limparLista()
+            {
+                listaClientes = null;
             }
         }
     }

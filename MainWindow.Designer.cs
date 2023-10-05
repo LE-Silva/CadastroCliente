@@ -30,7 +30,7 @@ namespace CadastroCliente
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbClienteDados = new System.Windows.Forms.GroupBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
@@ -47,13 +47,11 @@ namespace CadastroCliente
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.labelCdCliente = new System.Windows.Forms.Label();
             this.gbListaClientes = new System.Windows.Forms.GroupBox();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.gbClienteDados.SuspendLayout();
             this.gbListaClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbClienteDados
@@ -243,25 +241,24 @@ namespace CadastroCliente
             this.gbListaClientes.TabStop = false;
             this.gbListaClientes.Text = "Lista de Clientes";
             // 
+            // dgvClientes
+            // 
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(7, 21);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(830, 336);
+            this.dgvClientes.TabIndex = 1;
+            // 
             // vScrollBar1
             // 
             this.vScrollBar1.Location = new System.Drawing.Point(805, 22);
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(17, 343);
             this.vScrollBar1.TabIndex = 0;
-            // 
-            // dgvClientes
-            // 
-            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(7, 22);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(830, 336);
-            this.dgvClientes.TabIndex = 1;
-            // 
-            // programBindingSource
-            // 
-            this.programBindingSource.DataSource = typeof(CadastroCliente.Program);
             // 
             // MainWindow
             // 
@@ -270,14 +267,13 @@ namespace CadastroCliente
             this.ClientSize = new System.Drawing.Size(868, 595);
             this.Controls.Add(this.gbListaClientes);
             this.Controls.Add(this.gbClienteDados);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainWindow";
             this.Text = "Cadastro de Clientes";
             this.gbClienteDados.ResumeLayout(false);
             this.gbClienteDados.PerformLayout();
             this.gbListaClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -302,7 +298,6 @@ namespace CadastroCliente
         private System.Windows.Forms.GroupBox gbListaClientes;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.BindingSource programBindingSource;
     }
 }
 
