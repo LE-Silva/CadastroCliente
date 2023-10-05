@@ -30,7 +30,9 @@ namespace CadastroCliente
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbClienteDados = new System.Windows.Forms.GroupBox();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbTpPessoa = new System.Windows.Forms.ComboBox();
@@ -44,11 +46,19 @@ namespace CadastroCliente
             this.labelClienteDescricao = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.labelCdCliente = new System.Windows.Forms.Label();
+            this.gbListaClientes = new System.Windows.Forms.GroupBox();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbClienteDados.SuspendLayout();
+            this.gbListaClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbClienteDados
             // 
+            this.gbClienteDados.Controls.Add(this.btnSalvar);
             this.gbClienteDados.Controls.Add(this.mtxtCPF);
             this.gbClienteDados.Controls.Add(this.label1);
             this.gbClienteDados.Controls.Add(this.cbTpPessoa);
@@ -69,6 +79,17 @@ namespace CadastroCliente
             this.gbClienteDados.TabIndex = 9;
             this.gbClienteDados.TabStop = false;
             this.gbClienteDados.Text = "Dados do Cliente";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Enabled = false;
+            this.btnSalvar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(605, 136);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(104, 28);
+            this.btnSalvar.TabIndex = 21;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // mtxtCPF
             // 
@@ -110,14 +131,14 @@ namespace CadastroCliente
             this.btnCancelar.Location = new System.Drawing.Point(715, 136);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(104, 28);
-            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnAdicionar
             // 
             this.btnAdicionar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(605, 136);
+            this.btnAdicionar.Location = new System.Drawing.Point(495, 136);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(104, 28);
             this.btnAdicionar.TabIndex = 20;
@@ -210,16 +231,53 @@ namespace CadastroCliente
             this.labelCdCliente.TabIndex = 9;
             this.labelCdCliente.Text = "Código";
             // 
+            // gbListaClientes
+            // 
+            this.gbListaClientes.Controls.Add(this.dgvClientes);
+            this.gbListaClientes.Controls.Add(this.vScrollBar1);
+            this.gbListaClientes.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.gbListaClientes.Location = new System.Drawing.Point(13, 201);
+            this.gbListaClientes.Name = "gbListaClientes";
+            this.gbListaClientes.Size = new System.Drawing.Size(843, 364);
+            this.gbListaClientes.TabIndex = 10;
+            this.gbListaClientes.TabStop = false;
+            this.gbListaClientes.Text = "Lista de Clientes";
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(805, 22);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 343);
+            this.vScrollBar1.TabIndex = 0;
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(7, 22);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(830, 336);
+            this.dgvClientes.TabIndex = 1;
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataSource = typeof(CadastroCliente.Program);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 450);
+            this.ClientSize = new System.Drawing.Size(868, 595);
+            this.Controls.Add(this.gbListaClientes);
             this.Controls.Add(this.gbClienteDados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainWindow";
             this.Text = "Cadastro de Clientes";
             this.gbClienteDados.ResumeLayout(false);
             this.gbClienteDados.PerformLayout();
+            this.gbListaClientes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,6 +298,11 @@ namespace CadastroCliente
         private System.Windows.Forms.ComboBox cbTpPessoa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox mtxtCPF;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.GroupBox gbListaClientes;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.BindingSource programBindingSource;
     }
 }
 
