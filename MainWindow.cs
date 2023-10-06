@@ -20,7 +20,6 @@ namespace CadastroCliente
 
             var listaClientes = new BindingList<Cliente>();
             var tiposPessoa = new string[] {"Masculino", "Feminino", "Juridico"};
-
             dgvClientes.DataSource = listaClientes;
 
             cbTpPessoa.DataSource = tiposPessoa;
@@ -34,8 +33,6 @@ namespace CadastroCliente
             txtCodigo.LostFocus += txtCodigo_LostFocus;
 
             mtxtCPF.Mask = "999.999.999-99";
-
-            dgvClientes.AutoSize = true;
 
             void btnAdicionar_Click(object sender, EventArgs e)
             {
