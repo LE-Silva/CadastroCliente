@@ -20,6 +20,9 @@ namespace CadastroCliente
 
             var listaClientes = new BindingList<Cliente>();
             var tiposPessoa = new string[] {"Masculino", "Feminino", "Juridico"};
+            var listaCaracteresInvalidos = new string[] { "$", "/", "<", ">"};
+
+
             dgvClientes.DataSource = listaClientes;
 
             cbTpPessoa.DataSource = tiposPessoa;
@@ -30,13 +33,21 @@ namespace CadastroCliente
             btnSalvar.Click += btnSalvar_Click;
             btnCancelar.Click += btnCancelar_Click;
 
-            txtCodigo.LostFocus += txtCodigo_LostFocus;
-
             mtxtCPF.Mask = "999.999.999-99";
+
+            ttCodigo.SetToolTip(txtCodigo, "Código do Cliente");
+            ttCodigo.SetToolTip(txtNome, "Nome do Cliente");
+            ttCodigo.SetToolTip(mtxtCPF, "CPF do Cliente");
+
+            //Não funcionam
+            txtCodigo.KeyDown += txtCodigo_KeyDown;
+            txtNome.KeyDown += txtNome_KeyDown;
+
 
             void btnAdicionar_Click(object sender, EventArgs e)
             {
                 alterarStatusCampos();
+                txtCodigo.Focus();
             }
             void btnCancelar_Click(object sender, EventArgs e)
             {
@@ -44,18 +55,26 @@ namespace CadastroCliente
             }
             void btnSalvar_Click(object sender, EventArgs e)
             {
-                alterarStatusCampos();
-                listaClientes.Add(new Cliente(txtCodigo.Text, txtNome.Text, mtxtCPF.Text, cbTpPessoa.Text, chkCliPremium.Checked, true));
-                limparCampos();
+                if (validaCamposEmBranco())
+                {
+                    listaClientes.Add(new Cliente(txtCodigo.Text, txtNome.Text, mtxtCPF.Text, cbTpPessoa.Text, chkCliPremium.Checked, rbtnAtivo.Checked));
+                    alterarStatusCampos();
+                    limparCampos();
+                }
             }
 
-
-            void txtCodigo_LostFocus(object sender, EventArgs e)
+            void txtCodigo_KeyDown(object sender, KeyEventArgs e)
             {
-                if (string.IsNullOrEmpty(txtCodigo.Text.Trim()))
+                if (listaCaracteresInvalidos.Contains(e.KeyValue.ToString()))
                 {
-                    MessageBox.Show("Código não pode estar em branco!");
-                    txtCodigo.Focus();
+                    e.Handled = true;
+                }
+            }
+            void txtNome_KeyDown(object sender, KeyEventArgs e)
+            {
+                if (listaCaracteresInvalidos.Contains(e.KeyValue.ToString()))
+                {
+                    e.Handled = true;
                 }
             }
 
@@ -69,26 +88,12 @@ namespace CadastroCliente
                 }
                 else
                 {
+                    ttCodigo.SetToolTip(mtxtCPF, "CNPJ do Cliente"); // Não funciona
                     mtxtCPF.Mask = "999.999.999-99";
                     labelCPF.Text = "CPF";
                     labelClienteDescricao.Text = "Nome";
                 }
                     
-            }
-
-            void alterarStatusCampos()
-            {
-                btnAdicionar.Enabled = !btnAdicionar.Enabled;
-                btnSalvar.Enabled = !btnSalvar.Enabled;
-                txtCodigo.Enabled = !txtCodigo.Enabled;
-                mtxtCPF.Enabled = !mtxtCPF.Enabled;
-                txtNome.Enabled = !txtNome.Enabled;
-                btnCancelar.Enabled = !btnCancelar.Enabled;
-                cbTpPessoa.Enabled = !cbTpPessoa.Enabled;
-                rbtnAtivo.Enabled = !rbtnAtivo.Enabled;
-                rbtnInativo.Enabled = !rbtnInativo.Enabled;
-                rbtnAtivo.Checked = !rbtnAtivo.Checked;
-                chkCliPremium.Enabled = !chkCliPremium.Enabled;
             }
 
             void limparCampos()
@@ -101,10 +106,38 @@ namespace CadastroCliente
                 rbtnInativo.Enabled = false;
                 chkCliPremium.Checked = false;
             }
-            void limparLista()
+            void alterarStatusCampos()
             {
-                listaClientes = null;
+                limparCampos();
+                btnAdicionar.Enabled = !btnAdicionar.Enabled;
+                btnSalvar.Enabled = !btnSalvar.Enabled;
+                txtCodigo.Enabled = !txtCodigo.Enabled;
+                mtxtCPF.Enabled = !mtxtCPF.Enabled;
+                txtNome.Enabled = !txtNome.Enabled;
+                btnCancelar.Enabled = !btnCancelar.Enabled;
+                cbTpPessoa.Enabled = !cbTpPessoa.Enabled;
+                rbtnAtivo.Enabled = !rbtnAtivo.Enabled;
+                rbtnInativo.Enabled = !rbtnInativo.Enabled;
+                rbtnAtivo.Checked = !rbtnAtivo.Checked;
+                chkCliPremium.Enabled = !chkCliPremium.Enabled;
+            }
+            bool validaCamposEmBranco()
+            {
+                if (string.IsNullOrEmpty(txtCodigo.Text.Trim()))
+                {
+                    MessageBox.Show("Código não pode estar em branco!");
+                    txtCodigo.Focus();
+                    return false;
+                }
+                if (string.IsNullOrEmpty(txtNome.Text.Trim()))
+                {
+                    MessageBox.Show("Nome não pode estar em branco!");
+                    txtNome.Focus();
+                    return false;
+                }
+                return true;
             }
         }
+
     }
 }

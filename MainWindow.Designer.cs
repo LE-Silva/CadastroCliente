@@ -30,7 +30,8 @@ namespace CadastroCliente
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbClienteDados = new System.Windows.Forms.GroupBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
@@ -48,6 +49,9 @@ namespace CadastroCliente
             this.labelCdCliente = new System.Windows.Forms.Label();
             this.gbListaClientes = new System.Windows.Forms.GroupBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.ttCodigo = new System.Windows.Forms.ToolTip(this.components);
+            this.ttNome = new System.Windows.Forms.ToolTip(this.components);
+            this.ttCPF = new System.Windows.Forms.ToolTip(this.components);
             this.gbClienteDados.SuspendLayout();
             this.gbListaClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -112,7 +116,6 @@ namespace CadastroCliente
             // 
             // cbTpPessoa
             // 
-            this.cbTpPessoa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbTpPessoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTpPessoa.Enabled = false;
             this.cbTpPessoa.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -120,7 +123,7 @@ namespace CadastroCliente
             this.cbTpPessoa.FormattingEnabled = true;
             this.cbTpPessoa.Location = new System.Drawing.Point(687, 52);
             this.cbTpPessoa.Name = "cbTpPessoa";
-            this.cbTpPessoa.Size = new System.Drawing.Size(132, 27);
+            this.cbTpPessoa.Size = new System.Drawing.Size(132, 28);
             this.cbTpPessoa.TabIndex = 16;
             // 
             // btnCancelar
@@ -243,10 +246,10 @@ namespace CadastroCliente
             // 
             // dgvClientes
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -292,6 +295,9 @@ namespace CadastroCliente
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.GroupBox gbListaClientes;
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.ToolTip ttCodigo;
+        private System.Windows.Forms.ToolTip ttNome;
+        private System.Windows.Forms.ToolTip ttCPF;
     }
 }
 
