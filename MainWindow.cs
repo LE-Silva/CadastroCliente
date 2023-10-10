@@ -28,16 +28,35 @@ namespace CadastroCliente
             cbTpPessoa.DataSource = tiposPessoa;
             cbTpPessoa.SelectedIndex = -1;
             cbTpPessoa.SelectedIndexChanged += cbTpPessoa_SelectedIndexChanged;
+            cbTpPessoa.TabStop = false;
+            cbTpPessoa.EnabledChanged += cbTpPessoa_EnabledChanged;
+
+            chkCliPremium.TabStop = false;
+            chkCliPremium.EnabledChanged += chkCliPremium_EnabledChanged;
+
+            rbtnAtivo.EnabledChanged += rbtnAtivo_EnabledChanged;
+            rbtnInativo.EnabledChanged += rbtnInativo_EnabledChanged;
 
             btnAdicionar.Click += btnAdicionar_Click;
             btnSalvar.Click += btnSalvar_Click;
             btnCancelar.Click += btnCancelar_Click;
 
-            mtxtCPF.Mask = "999.999.999-99";
-
             ttCodigo.SetToolTip(txtCodigo, "Código do Cliente");
             ttCodigo.SetToolTip(txtNome, "Nome do Cliente");
             ttCodigo.SetToolTip(mtxtCPF, "CPF do Cliente");
+
+            txtCodigo.DoubleClick += txtCodigo_DoubleClick;
+            txtCodigo.GotFocus += txtCodigo_GotFocus;
+            txtCodigo.EnabledChanged += txtCodigo_EnabledChanged;
+
+            txtNome.DoubleClick += txtNome_DoubleClick;
+            txtNome.GotFocus += txtNome_GotFocus;
+            txtCodigo.EnabledChanged += txtNome_EnabledChanged;
+
+            mtxtCPF.Mask = "999.999.999-99";
+            mtxtCPF.DoubleClick += mtxtCPF_DoubleClick;
+            mtxtCPF.GotFocus += mtxtCPF_GotFocus;
+            mtxtCPF.EnabledChanged += mtxtCPF_EnabledChanged;
 
             //Não funcionam
             txtCodigo.KeyDown += txtCodigo_KeyDown;
@@ -59,8 +78,23 @@ namespace CadastroCliente
                 {
                     listaClientes.Add(new Cliente(txtCodigo.Text, txtNome.Text, mtxtCPF.Text, cbTpPessoa.Text, chkCliPremium.Checked, rbtnAtivo.Checked));
                     alterarStatusCampos();
-                    limparCampos();
                 }
+            }
+
+            void txtCodigo_DoubleClick(object sender, EventArgs e)
+            {
+                txtCodigo.SelectAll();
+                txtCodigo.Copy();
+            }
+            void txtNome_DoubleClick(object sender, EventArgs e)
+            {
+                txtNome.SelectAll();
+                txtNome.Copy();
+            }
+            void mtxtCPF_DoubleClick(object sender, EventArgs e)
+            {
+                mtxtCPF.SelectAll();
+                mtxtCPF.Copy();
             }
 
             void txtCodigo_KeyDown(object sender, KeyEventArgs e)
@@ -76,6 +110,48 @@ namespace CadastroCliente
                 {
                     e.Handled = true;
                 }
+            }
+
+            void txtNome_GotFocus(object sender, EventArgs e)
+            {
+                txtNome.SelectAll();
+            }
+            void txtCodigo_GotFocus(object sender, EventArgs e)
+            {
+                txtCodigo.SelectAll();
+            }
+            void mtxtCPF_GotFocus(object sender, EventArgs e)
+            {
+                mtxtCPF.SelectAll();
+            }
+
+            void txtCodigo_EnabledChanged(object sender, EventArgs e)
+            {
+                txtCodigo.Text = string.Empty;
+            }
+            void txtNome_EnabledChanged(object sender, EventArgs e)
+            {
+                txtNome.Text = string.Empty;
+            }
+            void mtxtCPF_EnabledChanged(object sender, EventArgs e)
+            {
+                mtxtCPF.Text = string.Empty;
+            }
+            void chkCliPremium_EnabledChanged(object sender, EventArgs e)
+            {
+                chkCliPremium.Checked = false;
+            }
+            void cbTpPessoa_EnabledChanged(object sender, EventArgs e)
+            {
+                cbTpPessoa.SelectedIndex = -1;
+            }
+            void rbtnAtivo_EnabledChanged(object sender, EventArgs e)
+            {
+                rbtnAtivo.Checked = false;
+            }
+            void rbtnInativo_EnabledChanged(object sender, EventArgs e)
+            {
+                rbtnInativo.Checked = false;
             }
 
             void cbTpPessoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,19 +172,9 @@ namespace CadastroCliente
                     
             }
 
-            void limparCampos()
-            {
-                txtCodigo.Text = string.Empty;
-                txtNome.Text = string.Empty;
-                mtxtCPF.Text= string.Empty;
-                cbTpPessoa.SelectedIndex = -1;
-                rbtnAtivo.Checked = false;
-                rbtnInativo.Enabled = false;
-                chkCliPremium.Checked = false;
-            }
             void alterarStatusCampos()
             {
-                limparCampos();
+                //limparCampos();
                 btnAdicionar.Enabled = !btnAdicionar.Enabled;
                 btnSalvar.Enabled = !btnSalvar.Enabled;
                 txtCodigo.Enabled = !txtCodigo.Enabled;
