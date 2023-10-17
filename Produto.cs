@@ -8,11 +8,12 @@ namespace CadastroCliente
 {
     public class Produto
     {
-        public string CdProduto { get; set; }
-        public string Descricao { get; set; }
-        public bool IsActive { get; set;}
-        public DateTime DtValidade { get; set; }
-        public decimal Valor { get; set;}
+        public bool Selected { get; set; }
+        public string CdProduto { get; }
+        public string Descricao { get; }
+        public bool IsActive { get; }
+        public DateTime DtValidade { get; }
+        public decimal Valor { get;}
 
         public Produto(string cdProduto, string descricao, bool isActive, DateTime dtValidade, decimal valor)
         {

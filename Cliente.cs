@@ -8,6 +8,7 @@ namespace CadastroCliente
 {
     public class Cliente
     {
+        public bool Selected { get; set; }
         public string CdCliente { get; }
         public string Nome { get; }
         public string Cpf { get; }

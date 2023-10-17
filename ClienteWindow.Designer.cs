@@ -32,66 +32,238 @@ namespace CadastroCliente
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.gbClienteDados = new System.Windows.Forms.GroupBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbTpPessoa = new System.Windows.Forms.ComboBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.rbtnInativo = new System.Windows.Forms.RadioButton();
-            this.rbtnAtivo = new System.Windows.Forms.RadioButton();
-            this.labelCPF = new System.Windows.Forms.Label();
-            this.chkCliPremium = new System.Windows.Forms.CheckBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.labelClienteDescricao = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.labelCdCliente = new System.Windows.Forms.Label();
-            this.gbListaClientes = new System.Windows.Forms.GroupBox();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteWindow));
             this.ttCodigo = new System.Windows.Forms.ToolTip(this.components);
             this.ttNome = new System.Windows.Forms.ToolTip(this.components);
             this.ttCPF = new System.Windows.Forms.ToolTip(this.components);
-            this.gbClienteDados.SuspendLayout();
-            this.gbListaClientes.SuspendLayout();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.tsListaCliente = new System.Windows.Forms.ToolStrip();
+            this.tsddbListaC = new System.Windows.Forms.ToolStripDropDownButton();
+            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desmarcarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selecionarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpCadastrar = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.gbDadosProduto = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.rbtnInativo = new System.Windows.Forms.RadioButton();
+            this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.cbTpPessoa = new System.Windows.Forms.ComboBox();
+            this.chkCliPremium = new System.Windows.Forms.CheckBox();
+            this.rbtnAtivo = new System.Windows.Forms.RadioButton();
+            this.labelCdCliente = new System.Windows.Forms.Label();
+            this.labelClienteDescricao = new System.Windows.Forms.Label();
+            this.labelCPF = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.tcCadastrarP = new System.Windows.Forms.TabControl();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.tsListaCliente.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tlpCadastrar.SuspendLayout();
+            this.gbDadosProduto.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tcCadastrarP.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gbClienteDados
+            // tabPage2
             // 
-            this.gbClienteDados.Controls.Add(this.btnSalvar);
-            this.gbClienteDados.Controls.Add(this.mtxtCPF);
-            this.gbClienteDados.Controls.Add(this.label1);
-            this.gbClienteDados.Controls.Add(this.cbTpPessoa);
-            this.gbClienteDados.Controls.Add(this.btnCancelar);
-            this.gbClienteDados.Controls.Add(this.btnAdicionar);
-            this.gbClienteDados.Controls.Add(this.rbtnInativo);
-            this.gbClienteDados.Controls.Add(this.rbtnAtivo);
-            this.gbClienteDados.Controls.Add(this.labelCPF);
-            this.gbClienteDados.Controls.Add(this.chkCliPremium);
-            this.gbClienteDados.Controls.Add(this.txtNome);
-            this.gbClienteDados.Controls.Add(this.labelClienteDescricao);
-            this.gbClienteDados.Controls.Add(this.txtCodigo);
-            this.gbClienteDados.Controls.Add(this.labelCdCliente);
-            this.gbClienteDados.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.gbClienteDados.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbClienteDados.Location = new System.Drawing.Point(12, 12);
-            this.gbClienteDados.Name = "gbClienteDados";
-            this.gbClienteDados.Size = new System.Drawing.Size(844, 185);
-            this.gbClienteDados.TabIndex = 9;
-            this.gbClienteDados.TabStop = false;
-            this.gbClienteDados.Text = "Dados do Cliente";
+            this.tabPage2.Controls.Add(this.tsListaCliente);
+            this.tabPage2.Controls.Add(this.dgvClientes);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(836, 520);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Listar Clientes";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgvClientes
+            // 
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(0, 0);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(836, 524);
+            this.dgvClientes.TabIndex = 2;
+            // 
+            // tsListaCliente
+            // 
+            this.tsListaCliente.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tsListaCliente.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsddbListaC});
+            this.tsListaCliente.Location = new System.Drawing.Point(3, 492);
+            this.tsListaCliente.Name = "tsListaCliente";
+            this.tsListaCliente.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.tsListaCliente.Size = new System.Drawing.Size(830, 25);
+            this.tsListaCliente.TabIndex = 4;
+            this.tsListaCliente.Text = "toolStrip1";
+            // 
+            // tsddbListaC
+            // 
+            this.tsddbListaC.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbListaC.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.excluirToolStripMenuItem,
+            this.desmarcarTodosToolStripMenuItem,
+            this.selecionarTodosToolStripMenuItem});
+            this.tsddbListaC.Image = ((System.Drawing.Image)(resources.GetObject("tsddbListaC.Image")));
+            this.tsddbListaC.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbListaC.Name = "tsddbListaC";
+            this.tsddbListaC.Size = new System.Drawing.Size(64, 22);
+            this.tsddbListaC.Text = "Funções";
+            // 
+            // excluirToolStripMenuItem
+            // 
+            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.excluirToolStripMenuItem.Text = "Excluir";
+            // 
+            // desmarcarTodosToolStripMenuItem
+            // 
+            this.desmarcarTodosToolStripMenuItem.Name = "desmarcarTodosToolStripMenuItem";
+            this.desmarcarTodosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.desmarcarTodosToolStripMenuItem.Text = "Desmarcar Todos";
+            // 
+            // selecionarTodosToolStripMenuItem
+            // 
+            this.selecionarTodosToolStripMenuItem.Name = "selecionarTodosToolStripMenuItem";
+            this.selecionarTodosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.selecionarTodosToolStripMenuItem.Text = "Selecionar Todos";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(836, 520);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Cadastrar";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.gbDadosProduto, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tlpCadastrar, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(824, 511);
+            this.tableLayoutPanel1.TabIndex = 23;
+            // 
+            // tlpCadastrar
+            // 
+            this.tlpCadastrar.ColumnCount = 3;
+            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpCadastrar.Controls.Add(this.btnCancelar, 0, 0);
+            this.tlpCadastrar.Controls.Add(this.btnSalvar, 0, 0);
+            this.tlpCadastrar.Controls.Add(this.btnAdicionar, 0, 0);
+            this.tlpCadastrar.Location = new System.Drawing.Point(3, 3);
+            this.tlpCadastrar.Name = "tlpCadastrar";
+            this.tlpCadastrar.RowCount = 1;
+            this.tlpCadastrar.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpCadastrar.Size = new System.Drawing.Size(818, 36);
+            this.tlpCadastrar.TabIndex = 2;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.Location = new System.Drawing.Point(3, 3);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(104, 28);
+            this.btnAdicionar.TabIndex = 21;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Enabled = false;
             this.btnSalvar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(605, 136);
+            this.btnSalvar.Location = new System.Drawing.Point(113, 3);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(104, 28);
-            this.btnSalvar.TabIndex = 21;
+            this.btnSalvar.TabIndex = 22;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(223, 3);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(104, 28);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // gbDadosProduto
+            // 
+            this.gbDadosProduto.Controls.Add(this.tableLayoutPanel2);
+            this.gbDadosProduto.Font = new System.Drawing.Font("Arial Narrow", 10F);
+            this.gbDadosProduto.Location = new System.Drawing.Point(3, 45);
+            this.gbDadosProduto.Name = "gbDadosProduto";
+            this.gbDadosProduto.Size = new System.Drawing.Size(818, 463);
+            this.gbDadosProduto.TabIndex = 3;
+            this.gbDadosProduto.TabStop = false;
+            this.gbDadosProduto.Text = "Dados";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel2.Controls.Add(this.txtCodigo, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelCPF, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelClienteDescricao, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelCdCliente, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.rbtnAtivo, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.chkCliPremium, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cbTpPessoa, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtNome, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.mtxtCPF, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.rbtnInativo, 3, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 22);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 280F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(806, 453);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // rbtnInativo
+            // 
+            this.rbtnInativo.AutoSize = true;
+            this.rbtnInativo.Enabled = false;
+            this.rbtnInativo.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnInativo.Location = new System.Drawing.Point(681, 55);
+            this.rbtnInativo.Name = "rbtnInativo";
+            this.rbtnInativo.Size = new System.Drawing.Size(62, 24);
+            this.rbtnInativo.TabIndex = 30;
+            this.rbtnInativo.Text = "Inativo";
+            this.rbtnInativo.UseVisualStyleBackColor = true;
             // 
             // mtxtCPF
             // 
@@ -99,20 +271,20 @@ namespace CadastroCliente
             this.mtxtCPF.Culture = new System.Globalization.CultureInfo("");
             this.mtxtCPF.Enabled = false;
             this.mtxtCPF.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.mtxtCPF.Location = new System.Drawing.Point(526, 53);
+            this.mtxtCPF.Location = new System.Drawing.Point(536, 23);
             this.mtxtCPF.Name = "mtxtCPF";
-            this.mtxtCPF.Size = new System.Drawing.Size(155, 26);
-            this.mtxtCPF.TabIndex = 14;
+            this.mtxtCPF.Size = new System.Drawing.Size(113, 26);
+            this.mtxtCPF.TabIndex = 27;
             // 
-            // label1
+            // txtNome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.label1.Location = new System.Drawing.Point(683, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 20);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Tipo de Pessoa";
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Enabled = false;
+            this.txtNome.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(130, 23);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(400, 26);
+            this.txtNome.TabIndex = 26;
             // 
             // cbTpPessoa
             // 
@@ -121,182 +293,153 @@ namespace CadastroCliente
             this.cbTpPessoa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbTpPessoa.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.cbTpPessoa.FormattingEnabled = true;
-            this.cbTpPessoa.Location = new System.Drawing.Point(687, 52);
+            this.cbTpPessoa.Location = new System.Drawing.Point(681, 23);
             this.cbTpPessoa.Name = "cbTpPessoa";
-            this.cbTpPessoa.Size = new System.Drawing.Size(132, 28);
-            this.cbTpPessoa.TabIndex = 16;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Enabled = false;
-            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(715, 136);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 28);
-            this.btnCancelar.TabIndex = 22;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(495, 136);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(104, 28);
-            this.btnAdicionar.TabIndex = 20;
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // rbtnInativo
-            // 
-            this.rbtnInativo.AutoSize = true;
-            this.rbtnInativo.Enabled = false;
-            this.rbtnInativo.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnInativo.Location = new System.Drawing.Point(757, 85);
-            this.rbtnInativo.Name = "rbtnInativo";
-            this.rbtnInativo.Size = new System.Drawing.Size(62, 24);
-            this.rbtnInativo.TabIndex = 19;
-            this.rbtnInativo.Text = "Inativo";
-            this.rbtnInativo.UseVisualStyleBackColor = true;
-            // 
-            // rbtnAtivo
-            // 
-            this.rbtnAtivo.AutoSize = true;
-            this.rbtnAtivo.Enabled = false;
-            this.rbtnAtivo.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnAtivo.Location = new System.Drawing.Point(699, 86);
-            this.rbtnAtivo.Name = "rbtnAtivo";
-            this.rbtnAtivo.Size = new System.Drawing.Size(52, 24);
-            this.rbtnAtivo.TabIndex = 18;
-            this.rbtnAtivo.Text = "Ativo";
-            this.rbtnAtivo.UseVisualStyleBackColor = true;
-            // 
-            // labelCPF
-            // 
-            this.labelCPF.AutoSize = true;
-            this.labelCPF.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.labelCPF.Location = new System.Drawing.Point(522, 30);
-            this.labelCPF.Name = "labelCPF";
-            this.labelCPF.Size = new System.Drawing.Size(34, 20);
-            this.labelCPF.TabIndex = 13;
-            this.labelCPF.Text = "CPF";
+            this.cbTpPessoa.Size = new System.Drawing.Size(122, 28);
+            this.cbTpPessoa.TabIndex = 24;
             // 
             // chkCliPremium
             // 
             this.chkCliPremium.AutoSize = true;
             this.chkCliPremium.Enabled = false;
             this.chkCliPremium.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCliPremium.Location = new System.Drawing.Point(27, 85);
+            this.chkCliPremium.Location = new System.Drawing.Point(3, 55);
             this.chkCliPremium.Name = "chkCliPremium";
             this.chkCliPremium.Size = new System.Drawing.Size(121, 24);
-            this.chkCliPremium.TabIndex = 17;
+            this.chkCliPremium.TabIndex = 28;
             this.chkCliPremium.Text = "Cliente Premium";
             this.chkCliPremium.UseVisualStyleBackColor = true;
             // 
-            // txtNome
+            // rbtnAtivo
             // 
-            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Enabled = false;
-            this.txtNome.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(137, 53);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(383, 26);
-            this.txtNome.TabIndex = 12;
+            this.rbtnAtivo.AutoSize = true;
+            this.rbtnAtivo.Enabled = false;
+            this.rbtnAtivo.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnAtivo.Location = new System.Drawing.Point(536, 55);
+            this.rbtnAtivo.Name = "rbtnAtivo";
+            this.rbtnAtivo.Size = new System.Drawing.Size(52, 24);
+            this.rbtnAtivo.TabIndex = 29;
+            this.rbtnAtivo.Text = "Ativo";
+            this.rbtnAtivo.UseVisualStyleBackColor = true;
+            // 
+            // labelCdCliente
+            // 
+            this.labelCdCliente.AutoSize = true;
+            this.labelCdCliente.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.labelCdCliente.Location = new System.Drawing.Point(3, 0);
+            this.labelCdCliente.Name = "labelCdCliente";
+            this.labelCdCliente.Size = new System.Drawing.Size(49, 20);
+            this.labelCdCliente.TabIndex = 31;
+            this.labelCdCliente.Text = "Código";
             // 
             // labelClienteDescricao
             // 
             this.labelClienteDescricao.AutoSize = true;
             this.labelClienteDescricao.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.labelClienteDescricao.Location = new System.Drawing.Point(133, 30);
+            this.labelClienteDescricao.Location = new System.Drawing.Point(130, 0);
             this.labelClienteDescricao.Name = "labelClienteDescricao";
             this.labelClienteDescricao.Size = new System.Drawing.Size(43, 20);
-            this.labelClienteDescricao.TabIndex = 11;
+            this.labelClienteDescricao.TabIndex = 32;
             this.labelClienteDescricao.Text = "Nome";
+            // 
+            // labelCPF
+            // 
+            this.labelCPF.AutoSize = true;
+            this.labelCPF.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.labelCPF.Location = new System.Drawing.Point(536, 0);
+            this.labelCPF.Name = "labelCPF";
+            this.labelCPF.Size = new System.Drawing.Size(34, 20);
+            this.labelCPF.TabIndex = 33;
+            this.labelCPF.Text = "CPF";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.label1.Location = new System.Drawing.Point(681, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Tipo de Pessoa";
             // 
             // txtCodigo
             // 
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(27, 53);
+            this.txtCodigo.Location = new System.Drawing.Point(3, 23);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(104, 26);
-            this.txtCodigo.TabIndex = 10;
+            this.txtCodigo.TabIndex = 35;
             // 
-            // labelCdCliente
+            // tcCadastrarP
             // 
-            this.labelCdCliente.AutoSize = true;
-            this.labelCdCliente.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.labelCdCliente.Location = new System.Drawing.Point(23, 29);
-            this.labelCdCliente.Name = "labelCdCliente";
-            this.labelCdCliente.Size = new System.Drawing.Size(49, 20);
-            this.labelCdCliente.TabIndex = 9;
-            this.labelCdCliente.Text = "Código";
-            // 
-            // gbListaClientes
-            // 
-            this.gbListaClientes.Controls.Add(this.dgvClientes);
-            this.gbListaClientes.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
-            this.gbListaClientes.Location = new System.Drawing.Point(13, 201);
-            this.gbListaClientes.Name = "gbListaClientes";
-            this.gbListaClientes.Size = new System.Drawing.Size(843, 364);
-            this.gbListaClientes.TabIndex = 10;
-            this.gbListaClientes.TabStop = false;
-            this.gbListaClientes.Text = "Lista de Clientes";
-            // 
-            // dgvClientes
-            // 
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(7, 21);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(830, 336);
-            this.dgvClientes.TabIndex = 1;
+            this.tcCadastrarP.Controls.Add(this.tabPage1);
+            this.tcCadastrarP.Controls.Add(this.tabPage2);
+            this.tcCadastrarP.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.tcCadastrarP.Location = new System.Drawing.Point(12, 12);
+            this.tcCadastrarP.Name = "tcCadastrarP";
+            this.tcCadastrarP.SelectedIndex = 0;
+            this.tcCadastrarP.Size = new System.Drawing.Size(844, 553);
+            this.tcCadastrarP.TabIndex = 11;
             // 
             // ClienteWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 595);
-            this.Controls.Add(this.gbListaClientes);
-            this.Controls.Add(this.gbClienteDados);
+            this.Controls.Add(this.tcCadastrarP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ClienteWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Clientes";
-            this.gbClienteDados.ResumeLayout(false);
-            this.gbClienteDados.PerformLayout();
-            this.gbListaClientes.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.tsListaCliente.ResumeLayout(false);
+            this.tsListaCliente.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tlpCadastrar.ResumeLayout(false);
+            this.gbDadosProduto.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tcCadastrarP.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gbClienteDados;
-        private System.Windows.Forms.CheckBox chkCliPremium;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label labelClienteDescricao;
-        private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Label labelCdCliente;
-        private System.Windows.Forms.Label labelCPF;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.RadioButton rbtnInativo;
-        private System.Windows.Forms.RadioButton rbtnAtivo;
-        private System.Windows.Forms.ComboBox cbTpPessoa;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox mtxtCPF;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.GroupBox gbListaClientes;
-        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.ToolTip ttCodigo;
         private System.Windows.Forms.ToolTip ttNome;
         private System.Windows.Forms.ToolTip ttCPF;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ToolStrip tsListaCliente;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbListaC;
+        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem desmarcarTodosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selecionarTodosToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox gbDadosProduto;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelCPF;
+        private System.Windows.Forms.Label labelClienteDescricao;
+        private System.Windows.Forms.Label labelCdCliente;
+        private System.Windows.Forms.RadioButton rbtnAtivo;
+        private System.Windows.Forms.CheckBox chkCliPremium;
+        private System.Windows.Forms.ComboBox cbTpPessoa;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.MaskedTextBox mtxtCPF;
+        private System.Windows.Forms.RadioButton rbtnInativo;
+        private System.Windows.Forms.TableLayoutPanel tlpCadastrar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.TabControl tcCadastrarP;
     }
 }
 

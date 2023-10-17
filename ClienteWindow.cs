@@ -62,6 +62,10 @@ namespace CadastroCliente
             txtCodigo.KeyDown += txtCodigo_KeyDown;
             txtNome.KeyDown += txtNome_KeyDown;
 
+            selecionarTodosToolStripMenuItem.Click += selecionarTodosToolStripMenuItem_Click;
+            desmarcarTodosToolStripMenuItem.Click += desmarcarTodosToolStripMenuItem_Click;
+            excluirToolStripMenuItem.Click += excluirToolStripMenuItem_Click;
+
 
             void btnAdicionar_Click(object sender, EventArgs e)
             {
@@ -170,6 +174,37 @@ namespace CadastroCliente
                     labelClienteDescricao.Text = "Nome";
                 }
                     
+            }
+
+            void selecionarTodosToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                foreach(Cliente cliente in listaClientes)
+                {
+                    cliente.Selected = true;
+                }
+                dgvClientes.Refresh();
+            }
+            void desmarcarTodosToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                foreach (Cliente cliente in listaClientes)
+                {
+                    cliente.Selected = false;
+                }
+                dgvClientes.Refresh();
+            }
+            void excluirToolStripMenuItem_Click(Object sender, EventArgs e)
+            {
+                var clienteQuery =
+                    from cliente in listaClientes
+                    where cliente.Selected == false
+                    select cliente;
+                var clientesSelecionados = listaClientes.Except(clienteQuery).ToList();
+
+                foreach (Cliente cliente in clientesSelecionados)
+                {
+                    listaClientes.Remove(cliente);
+                }
+                dgvClientes.Refresh();
             }
 
             void alterarStatusCampos()

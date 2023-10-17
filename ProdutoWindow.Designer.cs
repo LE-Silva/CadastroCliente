@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdutoWindow));
             this.tcProduto = new System.Windows.Forms.TabControl();
             this.tpCadastrar = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -48,8 +49,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDtValidade = new System.Windows.Forms.DateTimePicker();
             this.tpListar = new System.Windows.Forms.TabPage();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.tsListaCliente = new System.Windows.Forms.ToolStrip();
+            this.tsddbListaC = new System.Windows.Forms.ToolStripDropDownButton();
+            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desmarcarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selecionarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tcProduto.SuspendLayout();
             this.tpCadastrar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -59,6 +65,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tpListar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
+            this.tsListaCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcProduto
@@ -293,6 +300,7 @@
             // 
             // tpListar
             // 
+            this.tpListar.Controls.Add(this.tsListaCliente);
             this.tpListar.Controls.Add(this.dgvProdutos);
             this.tpListar.Location = new System.Drawing.Point(4, 29);
             this.tpListar.Name = "tpListar";
@@ -309,6 +317,49 @@
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.Size = new System.Drawing.Size(824, 526);
             this.dgvProdutos.TabIndex = 0;
+            // 
+            // tsListaCliente
+            // 
+            this.tsListaCliente.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tsListaCliente.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsddbListaC});
+            this.tsListaCliente.Location = new System.Drawing.Point(3, 510);
+            this.tsListaCliente.Name = "tsListaCliente";
+            this.tsListaCliente.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.tsListaCliente.Size = new System.Drawing.Size(830, 25);
+            this.tsListaCliente.TabIndex = 4;
+            this.tsListaCliente.Text = "toolStrip1";
+            // 
+            // tsddbListaC
+            // 
+            this.tsddbListaC.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbListaC.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.excluirToolStripMenuItem,
+            this.desmarcarTodosToolStripMenuItem,
+            this.selecionarTodosToolStripMenuItem});
+            this.tsddbListaC.Image = ((System.Drawing.Image)(resources.GetObject("tsddbListaC.Image")));
+            this.tsddbListaC.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbListaC.Name = "tsddbListaC";
+            this.tsddbListaC.Size = new System.Drawing.Size(64, 22);
+            this.tsddbListaC.Text = "Funções";
+            // 
+            // excluirToolStripMenuItem
+            // 
+            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.excluirToolStripMenuItem.Text = "Excluir";
+            // 
+            // desmarcarTodosToolStripMenuItem
+            // 
+            this.desmarcarTodosToolStripMenuItem.Name = "desmarcarTodosToolStripMenuItem";
+            this.desmarcarTodosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.desmarcarTodosToolStripMenuItem.Text = "Desmarcar Todos";
+            // 
+            // selecionarTodosToolStripMenuItem
+            // 
+            this.selecionarTodosToolStripMenuItem.Name = "selecionarTodosToolStripMenuItem";
+            this.selecionarTodosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.selecionarTodosToolStripMenuItem.Text = "Selecionar Todos";
             // 
             // ProdutoWindow
             // 
@@ -329,7 +380,10 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tpListar.ResumeLayout(false);
+            this.tpListar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
+            this.tsListaCliente.ResumeLayout(false);
+            this.tsListaCliente.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -358,5 +412,10 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridView dgvProdutos;
+        private System.Windows.Forms.ToolStrip tsListaCliente;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbListaC;
+        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem desmarcarTodosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selecionarTodosToolStripMenuItem;
     }
 }
