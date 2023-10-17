@@ -47,16 +47,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="ClienteWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteWindow.Designer.cs">
+      <DependentUpon>ClienteWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produto.cs" />
+    <Compile Include="ProdutoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutoWindow.Designer.cs">
+      <DependentUpon>ProdutoWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClienteWindow.resx">
+      <DependentUpon>ClienteWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.zu-ZA.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutoWindow.resx">
+      <DependentUpon>ProdutoWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
