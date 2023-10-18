@@ -31,46 +31,46 @@ namespace CadastroCliente
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteWindow));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ttCodigo = new System.Windows.Forms.ToolTip(this.components);
             this.ttNome = new System.Windows.Forms.ToolTip(this.components);
             this.ttCPF = new System.Windows.Forms.ToolTip(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.tsListaCliente = new System.Windows.Forms.ToolStrip();
             this.tsddbListaC = new System.Windows.Forms.ToolStripDropDownButton();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.desmarcarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selecionarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpCadastrar = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.gbDadosProduto = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.rbtnInativo = new System.Windows.Forms.RadioButton();
-            this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.cbTpPessoa = new System.Windows.Forms.ComboBox();
-            this.chkCliPremium = new System.Windows.Forms.CheckBox();
-            this.rbtnAtivo = new System.Windows.Forms.RadioButton();
-            this.labelCdCliente = new System.Windows.Forms.Label();
-            this.labelClienteDescricao = new System.Windows.Forms.Label();
-            this.labelCPF = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelCPF = new System.Windows.Forms.Label();
+            this.labelClienteDescricao = new System.Windows.Forms.Label();
+            this.labelCdCliente = new System.Windows.Forms.Label();
+            this.rbtnAtivo = new System.Windows.Forms.RadioButton();
+            this.chkCliPremium = new System.Windows.Forms.CheckBox();
+            this.cbTpPessoa = new System.Windows.Forms.ComboBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.rbtnInativo = new System.Windows.Forms.RadioButton();
+            this.tlpCadastrar = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             this.tcCadastrarP = new System.Windows.Forms.TabControl();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.tsListaCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tlpCadastrar.SuspendLayout();
             this.gbDadosProduto.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tlpCadastrar.SuspendLayout();
             this.tcCadastrarP.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,17 +85,6 @@ namespace CadastroCliente
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listar Clientes";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgvClientes
-            // 
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(0, 0);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(836, 524);
-            this.dgvClientes.TabIndex = 2;
             // 
             // tsListaCliente
             // 
@@ -140,6 +129,17 @@ namespace CadastroCliente
             this.selecionarTodosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.selecionarTodosToolStripMenuItem.Text = "Selecionar Todos";
             // 
+            // dgvClientes
+            // 
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(0, 0);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(836, 524);
+            this.dgvClientes.TabIndex = 2;
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
@@ -166,54 +166,6 @@ namespace CadastroCliente
             this.tableLayoutPanel1.Size = new System.Drawing.Size(824, 511);
             this.tableLayoutPanel1.TabIndex = 23;
             // 
-            // tlpCadastrar
-            // 
-            this.tlpCadastrar.ColumnCount = 3;
-            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpCadastrar.Controls.Add(this.btnCancelar, 0, 0);
-            this.tlpCadastrar.Controls.Add(this.btnSalvar, 0, 0);
-            this.tlpCadastrar.Controls.Add(this.btnAdicionar, 0, 0);
-            this.tlpCadastrar.Location = new System.Drawing.Point(3, 3);
-            this.tlpCadastrar.Name = "tlpCadastrar";
-            this.tlpCadastrar.RowCount = 1;
-            this.tlpCadastrar.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpCadastrar.Size = new System.Drawing.Size(818, 36);
-            this.tlpCadastrar.TabIndex = 2;
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(3, 3);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(104, 28);
-            this.btnAdicionar.TabIndex = 21;
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Enabled = false;
-            this.btnSalvar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(113, 3);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(104, 28);
-            this.btnSalvar.TabIndex = 22;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Enabled = false;
-            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(223, 3);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 28);
-            this.btnCancelar.TabIndex = 23;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // gbDadosProduto
             // 
             this.gbDadosProduto.Controls.Add(this.tableLayoutPanel2);
@@ -231,7 +183,7 @@ namespace CadastroCliente
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel2.Controls.Add(this.txtCodigo, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.labelCPF, 2, 0);
@@ -253,62 +205,55 @@ namespace CadastroCliente
             this.tableLayoutPanel2.Size = new System.Drawing.Size(806, 453);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // rbtnInativo
+            // txtCodigo
             // 
-            this.rbtnInativo.AutoSize = true;
-            this.rbtnInativo.Enabled = false;
-            this.rbtnInativo.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnInativo.Location = new System.Drawing.Point(681, 55);
-            this.rbtnInativo.Name = "rbtnInativo";
-            this.rbtnInativo.Size = new System.Drawing.Size(62, 24);
-            this.rbtnInativo.TabIndex = 30;
-            this.rbtnInativo.Text = "Inativo";
-            this.rbtnInativo.UseVisualStyleBackColor = true;
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(3, 23);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(104, 26);
+            this.txtCodigo.TabIndex = 35;
             // 
-            // mtxtCPF
+            // label1
             // 
-            this.mtxtCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtxtCPF.Culture = new System.Globalization.CultureInfo("");
-            this.mtxtCPF.Enabled = false;
-            this.mtxtCPF.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.mtxtCPF.Location = new System.Drawing.Point(536, 23);
-            this.mtxtCPF.Name = "mtxtCPF";
-            this.mtxtCPF.Size = new System.Drawing.Size(113, 26);
-            this.mtxtCPF.TabIndex = 27;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.label1.Location = new System.Drawing.Point(681, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Tipo de Pessoa";
             // 
-            // txtNome
+            // labelCPF
             // 
-            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Enabled = false;
-            this.txtNome.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(130, 23);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(400, 26);
-            this.txtNome.TabIndex = 26;
+            this.labelCPF.AutoSize = true;
+            this.labelCPF.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.labelCPF.Location = new System.Drawing.Point(536, 0);
+            this.labelCPF.Name = "labelCPF";
+            this.labelCPF.Size = new System.Drawing.Size(34, 20);
+            this.labelCPF.TabIndex = 33;
+            this.labelCPF.Text = "CPF";
             // 
-            // cbTpPessoa
+            // labelClienteDescricao
             // 
-            this.cbTpPessoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTpPessoa.Enabled = false;
-            this.cbTpPessoa.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbTpPessoa.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.cbTpPessoa.FormattingEnabled = true;
-            this.cbTpPessoa.Location = new System.Drawing.Point(681, 23);
-            this.cbTpPessoa.Name = "cbTpPessoa";
-            this.cbTpPessoa.Size = new System.Drawing.Size(122, 28);
-            this.cbTpPessoa.TabIndex = 24;
+            this.labelClienteDescricao.AutoSize = true;
+            this.labelClienteDescricao.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.labelClienteDescricao.Location = new System.Drawing.Point(130, 0);
+            this.labelClienteDescricao.Name = "labelClienteDescricao";
+            this.labelClienteDescricao.Size = new System.Drawing.Size(43, 20);
+            this.labelClienteDescricao.TabIndex = 32;
+            this.labelClienteDescricao.Text = "Nome";
             // 
-            // chkCliPremium
+            // labelCdCliente
             // 
-            this.chkCliPremium.AutoSize = true;
-            this.chkCliPremium.Enabled = false;
-            this.chkCliPremium.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCliPremium.Location = new System.Drawing.Point(3, 55);
-            this.chkCliPremium.Name = "chkCliPremium";
-            this.chkCliPremium.Size = new System.Drawing.Size(121, 24);
-            this.chkCliPremium.TabIndex = 28;
-            this.chkCliPremium.Text = "Cliente Premium";
-            this.chkCliPremium.UseVisualStyleBackColor = true;
+            this.labelCdCliente.AutoSize = true;
+            this.labelCdCliente.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.labelCdCliente.Location = new System.Drawing.Point(3, 0);
+            this.labelCdCliente.Name = "labelCdCliente";
+            this.labelCdCliente.Size = new System.Drawing.Size(49, 20);
+            this.labelCdCliente.TabIndex = 31;
+            this.labelCdCliente.Text = "Código";
             // 
             // rbtnAtivo
             // 
@@ -322,55 +267,110 @@ namespace CadastroCliente
             this.rbtnAtivo.Text = "Ativo";
             this.rbtnAtivo.UseVisualStyleBackColor = true;
             // 
-            // labelCdCliente
+            // chkCliPremium
             // 
-            this.labelCdCliente.AutoSize = true;
-            this.labelCdCliente.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.labelCdCliente.Location = new System.Drawing.Point(3, 0);
-            this.labelCdCliente.Name = "labelCdCliente";
-            this.labelCdCliente.Size = new System.Drawing.Size(49, 20);
-            this.labelCdCliente.TabIndex = 31;
-            this.labelCdCliente.Text = "Código";
+            this.chkCliPremium.AutoSize = true;
+            this.chkCliPremium.Enabled = false;
+            this.chkCliPremium.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCliPremium.Location = new System.Drawing.Point(3, 55);
+            this.chkCliPremium.Name = "chkCliPremium";
+            this.chkCliPremium.Size = new System.Drawing.Size(121, 24);
+            this.chkCliPremium.TabIndex = 28;
+            this.chkCliPremium.Text = "Cliente Premium";
+            this.chkCliPremium.UseVisualStyleBackColor = true;
             // 
-            // labelClienteDescricao
+            // cbTpPessoa
             // 
-            this.labelClienteDescricao.AutoSize = true;
-            this.labelClienteDescricao.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.labelClienteDescricao.Location = new System.Drawing.Point(130, 0);
-            this.labelClienteDescricao.Name = "labelClienteDescricao";
-            this.labelClienteDescricao.Size = new System.Drawing.Size(43, 20);
-            this.labelClienteDescricao.TabIndex = 32;
-            this.labelClienteDescricao.Text = "Nome";
+            this.cbTpPessoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTpPessoa.Enabled = false;
+            this.cbTpPessoa.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbTpPessoa.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.cbTpPessoa.FormattingEnabled = true;
+            this.cbTpPessoa.Location = new System.Drawing.Point(681, 23);
+            this.cbTpPessoa.Name = "cbTpPessoa";
+            this.cbTpPessoa.Size = new System.Drawing.Size(122, 28);
+            this.cbTpPessoa.TabIndex = 24;
             // 
-            // labelCPF
+            // txtNome
             // 
-            this.labelCPF.AutoSize = true;
-            this.labelCPF.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.labelCPF.Location = new System.Drawing.Point(536, 0);
-            this.labelCPF.Name = "labelCPF";
-            this.labelCPF.Size = new System.Drawing.Size(34, 20);
-            this.labelCPF.TabIndex = 33;
-            this.labelCPF.Text = "CPF";
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Enabled = false;
+            this.txtNome.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(130, 23);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(400, 26);
+            this.txtNome.TabIndex = 26;
             // 
-            // label1
+            // mtxtCPF
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11F);
-            this.label1.Location = new System.Drawing.Point(681, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 20);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Tipo de Pessoa";
+            this.mtxtCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mtxtCPF.Culture = new System.Globalization.CultureInfo("");
+            this.mtxtCPF.Enabled = false;
+            this.mtxtCPF.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.mtxtCPF.Location = new System.Drawing.Point(536, 23);
+            this.mtxtCPF.Name = "mtxtCPF";
+            this.mtxtCPF.Size = new System.Drawing.Size(113, 26);
+            this.mtxtCPF.TabIndex = 27;
             // 
-            // txtCodigo
+            // rbtnInativo
             // 
-            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(3, 23);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(104, 26);
-            this.txtCodigo.TabIndex = 35;
+            this.rbtnInativo.AutoSize = true;
+            this.rbtnInativo.Enabled = false;
+            this.rbtnInativo.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnInativo.Location = new System.Drawing.Point(681, 55);
+            this.rbtnInativo.Name = "rbtnInativo";
+            this.rbtnInativo.Size = new System.Drawing.Size(62, 24);
+            this.rbtnInativo.TabIndex = 30;
+            this.rbtnInativo.Text = "Inativo";
+            this.rbtnInativo.UseVisualStyleBackColor = true;
+            // 
+            // tlpCadastrar
+            // 
+            this.tlpCadastrar.ColumnCount = 3;
+            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpCadastrar.Controls.Add(this.btnCancelar, 0, 0);
+            this.tlpCadastrar.Controls.Add(this.btnSalvar, 0, 0);
+            this.tlpCadastrar.Controls.Add(this.btnAdicionar, 0, 0);
+            this.tlpCadastrar.Location = new System.Drawing.Point(3, 3);
+            this.tlpCadastrar.Name = "tlpCadastrar";
+            this.tlpCadastrar.RowCount = 1;
+            this.tlpCadastrar.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpCadastrar.Size = new System.Drawing.Size(818, 36);
+            this.tlpCadastrar.TabIndex = 2;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(223, 3);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(104, 28);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Enabled = false;
+            this.btnSalvar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(113, 3);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(104, 28);
+            this.btnSalvar.TabIndex = 22;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.Location = new System.Drawing.Point(3, 3);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(104, 28);
+            this.btnAdicionar.TabIndex = 21;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
             // tcCadastrarP
             // 
@@ -395,15 +395,15 @@ namespace CadastroCliente
             this.Text = "Cadastro de Clientes";
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.tsListaCliente.ResumeLayout(false);
             this.tsListaCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tlpCadastrar.ResumeLayout(false);
             this.gbDadosProduto.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tlpCadastrar.ResumeLayout(false);
             this.tcCadastrarP.ResumeLayout(false);
             this.ResumeLayout(false);
 
