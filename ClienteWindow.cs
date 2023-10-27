@@ -2,28 +2,38 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CadastroCliente
 {
     public partial class ClienteWindow : Form
     {
+        private BindingList<Cliente> listaClientes = new BindingList<Cliente>();
+        private DataTable cliente = new DataTable();
+
         public ClienteWindow()
         {
             InitializeComponent();
             //Label, Textbox, Combobox, RadioButton, Checkbox, Button
             //Codigo, Descricao, Status, CPF, TP pessoa, Cliente Premium
 
-            var listaClientes = new BindingList<Cliente>();
+            //var listaClientes = new BindingList<Cliente>();
             var tiposPessoa = new string[] {"Masculino", "Feminino", "Juridico"};
             var listaCaracteresInvalidos = new string[] { "$", "/", "<", ">"};
 
+            GetAll();
+
+            //GetClientePorID("01");
+
 
             dgvClientes.DataSource = listaClientes;
+            //dgvClientes.DataSource = cliente;
 
             cbTpPessoa.DataSource = tiposPessoa;
             cbTpPessoa.SelectedIndex = -1;
@@ -66,6 +76,8 @@ namespace CadastroCliente
             desmarcarTodosToolStripMenuItem.Click += desmarcarTodosToolStripMenuItem_Click;
             excluirToolStripMenuItem.Click += excluirToolStripMenuItem_Click;
 
+            dgvClientes.DoubleClick += DgvClientes_DoubleClick;
+
 
             void btnAdicionar_Click(object sender, EventArgs e)
             {
@@ -74,14 +86,17 @@ namespace CadastroCliente
             }
             void btnCancelar_Click(object sender, EventArgs e)
             {
+                Delete();
                 alterarStatusCampos();
             }
             void btnSalvar_Click(object sender, EventArgs e)
             {
                 if (validaCamposEmBranco())
                 {
-                    listaClientes.Add(new Cliente(txtCodigo.Text, txtNome.Text, mtxtCPF.Text, cbTpPessoa.Text, chkCliPremium.Checked, rbtnAtivo.Checked));
-                    alterarStatusCampos();
+                    //Insert();
+                    Update();
+                    //listaClientes.Add(new Cliente(txtCodigo.Text, txtNome.Text, mtxtCPF.Text, cbTpPessoa.Text, chkCliPremium.Checked, rbtnAtivo.Checked));
+                    //alterarStatusCampos();
                 }
             }
 
@@ -240,5 +255,133 @@ namespace CadastroCliente
             }
         }
 
+        private void DgvClientes_DoubleClick(object sender, EventArgs e)
+        {
+            var cliente = (Cliente)dgvClientes.SelectedRows[0].DataBoundItem;
+            txtCodigo.Text = cliente.CdCliente.ToString();
+            txtNome.Text = cliente.Nome.ToString();
+        }
+
+        #region CRUD
+        private void GetAll()
+        {
+            using (var conn = new SqlConnection("Server=172.16.3.50;Database=SPT_LEJ_DbNutAG;User Id=sa;Password=dp;"))
+            {
+                conn.Open();
+
+                var query = "SELECT CdCliente, Nome, Cpf, TpPessoa, ISNULL(StClientePremium, 1) AS StClientePremium, ISNULL(StAtivo, 1) AS StAtivo FROM ClienteAtv2510";
+                var command = new SqlCommand(query, conn);
+
+                var result = command.ExecuteReader();
+                while (result.Read())
+                {
+                    var cliente = new Cliente(result["CdCliente"].ToString(),
+                        result["Nome"].ToString(),
+                        result["Cpf"].ToString(),
+                        result["TpPessoa"].ToString(),
+                        (bool)result["StClientePremium"],
+                        (bool)result["StAtivo"]);
+
+                    listaClientes.Add(cliente);
+                }
+
+                //using (var adapater = new SqlDataAdapter())
+                //{
+                //    adapater.SelectCommand = command;
+
+                //    cliente = new DataTable();
+                //    adapater.Fill(cliente);
+                //}                
+            }
+        }
+
+        private void GetClientePorID(string cdCliente)
+        {
+            using (var conn = new SqlConnection("Server=172.16.3.50;Database=SPT_LEJ_DbNutAG;User Id=sa;Password=dp;"))
+            {
+                conn.Open();
+
+                var query = "SELECT CdCliente, Nome, Cpf, TpPessoa, StClientePremium, StAtivo FROM ClienteAtv2510 WHERE CdCliente = @CdCliente";
+                var command = new SqlCommand(query, conn);
+                command.Parameters.AddWithValue("@CdCliente", cdCliente);
+
+                var result = command.ExecuteReader();
+                while (result.Read())
+                {
+                    var cliente = new Cliente(result["CdCliente"].ToString(),
+                        result["Nome"].ToString(),
+                        result["Cpf"].ToString(),
+                        result["TpPessoa"].ToString(),
+                        (bool)result["StClientePremium"],
+                        (bool)result["StAtivo"]);
+
+                    listaClientes.Add(cliente);
+                }
+                result.Close();
+
+                cliente = new DataTable();
+                using (var adapater = new SqlDataAdapter())
+                {
+                    adapater.SelectCommand = command;
+
+                    adapater.Fill(cliente);
+                }
+            }
+        }
+
+        private void Insert()
+        {
+            using (var conn = new SqlConnection("Server=172.16.3.50;Database=SPT_LEJ_DbNutAG;User Id=sa;Password=dp;"))
+            {
+                conn.Open();
+
+                var query = "INSERT INTO ClienteAtv2510 (CdCliente, Nome) VALUES (@CdCliente, @Nome)";
+                var command = new SqlCommand(query, conn);
+                command.Parameters.AddWithValue("@CdCliente", txtCodigo.Text);
+                command.Parameters.AddWithValue("@Nome", txtNome.Text);
+
+                var result = command.ExecuteNonQuery();
+            }
+
+            GetAll();
+            dgvClientes.DataSource = cliente;
+        }
+
+        private void Update()
+        {
+            using (var conn = new SqlConnection("Server=172.16.3.50;Database=SPT_LEJ_DbNutAG;User Id=sa;Password=dp;"))
+            {
+                conn.Open();
+
+                var query = "UPDATE ClienteAtv2510 SET CdCliente = @CdCliente, Nome = @Nome WHERE CdCliente = @CdCliente";
+                var command = new SqlCommand(query, conn);
+                command.Parameters.AddWithValue("@CdCliente", txtCodigo.Text);
+                command.Parameters.AddWithValue("@Nome", txtNome.Text);
+
+                var result = command.ExecuteNonQuery();
+            }
+
+            GetAll();
+            dgvClientes.DataSource = cliente;
+        }
+
+        private void Delete()
+        {
+            using (var conn = new SqlConnection("Server=172.16.3.50;Database=SPT_LEJ_DbNutAG;User Id=sa;Password=dp;"))
+            {
+                conn.Open();
+
+                var query = "DELETE ClienteAtv2510 WHERE CdCliente = @CdCliente";
+                var command = new SqlCommand(query, conn);
+                command.Parameters.AddWithValue("@CdCliente", txtCodigo.Text);
+
+                var result = command.ExecuteNonQuery();
+            }
+
+            GetAll();
+            dgvClientes.DataSource = cliente;
+        }
+        #endregion
     }
+
 }

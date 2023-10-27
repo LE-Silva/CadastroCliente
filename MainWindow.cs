@@ -22,12 +22,6 @@ namespace CadastroCliente
 
         void cadastrarClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var teste = new Form1();
-            teste.MdiParent = this;
-            teste.Show();
-
-            return;
-
             var cadastroCliente = new ClienteWindow();
             cadastroCliente.MdiParent = this;
             cadastroCliente.Show();
