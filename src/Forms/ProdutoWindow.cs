@@ -28,6 +28,8 @@ namespace CadastroCliente
             chkAtivo.EnabledChanged += chkAtivo_EnabledChanged;
             dtpDtValidade.EnabledChanged += dtpDtValidade_EnabledChanged;
 
+            dgvProdutos.DoubleClick += dgvProdutos_DoubleClick;
+
             dgvProdutos.DataSource = _listaProdutos;
         }
 
@@ -54,7 +56,6 @@ namespace CadastroCliente
                 MessageBox.Show("Valor do produto inválido");
             }
         }
-
         void txtCodigo_EnabledChanged(object sender, EventArgs e)
         {
             txtCodigo.Text = "";
@@ -74,6 +75,15 @@ namespace CadastroCliente
         void dtpDtValidade_EnabledChanged(object sender, EventArgs e)
         {
             dtpDtValidade.Value = DateTime.Now;
+        }
+        void dgvProdutos_DoubleClick(object sender, EventArgs e)
+        {
+            var produto = (Produto)dgvProdutos.SelectedRows[0].DataBoundItem;
+            txtCodigo.Text = produto.CdProduto.ToString();
+            txtDescricao.Text = produto.Descricao.ToString();
+            txtValor.Text = produto.Valor.ToString();
+            chkAtivo.Checked = produto.IsActive;
+            dtpDtValidade.Value = produto.DtValidade;
         }
         #endregion
         void alterarStatusCampos()

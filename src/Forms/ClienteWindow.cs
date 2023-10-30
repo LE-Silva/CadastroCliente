@@ -271,7 +271,6 @@ namespace CadastroCliente
 
                 var query = "SELECT CdCliente, Nome, Cpf, TpPessoa, ISNULL(StClientePremium, 1) AS StClientePremium, ISNULL(StAtivo, 1) AS StAtivo FROM ClienteAtv2510";
                 var command = new SqlCommand(query, conn);
-
                 var result = command.ExecuteReader();
                 while (result.Read())
                 {
