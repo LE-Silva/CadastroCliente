@@ -11,13 +11,13 @@ namespace CadastroCliente.Repositories
     public class ProdutoRepository
     {
 
-        private void Create(Produto entity, SqlConnection conexao)
+        public void Create(Produto entity, string connectionString)
         {
-            using (var conn = conexao)
+            using (var conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                var query = "INSERT INTO ProdutoProj (CdProduto, Descricao, Preco, IsActive, DtValidade) VALUES (@CdProduto, @Nome, @Preco, 'S', @DtValidade)";
+                var query = "INSERT INTO ProdutoAtv3110 (CdProduto, Descricao, Preco, IsActive, DtValidade) VALUES (@CdProduto, @Descricao, @Preco, 'S', @DtValidade)";
                 var command = new SqlCommand(query, conn);
                 command.Parameters.AddWithValue("@CdProduto", entity.CdProduto);
                 command.Parameters.AddWithValue("@Descricao", entity.Descricao);
@@ -28,18 +28,18 @@ namespace CadastroCliente.Repositories
             }
 
         }
-        private void Update(Produto entity, SqlConnection conexao)
+        public void Update(Produto entity, string connectionString)
         {
-            using (var conn = conexao)
+            using (var conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                var query = "UPDATE ProdutoProj SET Descricao = @Descricao, Preco = @Preco, IsActive = @IsActive, DtValidade = @DtValidade WHERE CdProduto = @CdProduto";
+                var query = "UPDATE ProdutoAtv3110 SET Descricao = @Descricao, Preco = @Preco, IsActive = @IsActive, DtValidade = @DtValidade WHERE CdProduto = @CdProduto";
                 var command = new SqlCommand(query, conn);
                 command.Parameters.AddWithValue("@CdProduto", entity.CdProduto);
                 command.Parameters.AddWithValue("@Descricao", entity.Descricao);
                 command.Parameters.AddWithValue("@Preco", entity.Valor);
-                command.Parameters.AddWithValue("@IsActive", entity.IsActive);
+                command.Parameters.AddWithValue("@IsActive", entity.getIsActiveChar());
                 command.Parameters.AddWithValue("@DtValidade", entity.DtValidade);
 
                 var result = command.ExecuteNonQuery();
@@ -47,30 +47,30 @@ namespace CadastroCliente.Repositories
 
         }
 
-        private void Delete(Produto entity, SqlConnection conexao)
+        public void Delete(string cdproduto, string connectionString)
         {
-            using (var conn = conexao)
+            using (var conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                var query = "DELETE FROM ProdutoProj WHERE CdProduto = @CdProduto";
+                var query = "DELETE FROM ProdutoAtv3110 WHERE CdProduto = @CdProduto";
                 var command = new SqlCommand(query, conn);
-                command.Parameters.AddWithValue("@CdProduto", entity.CdProduto);
+                command.Parameters.AddWithValue("@CdProduto", cdproduto);
 
                 var result = command.ExecuteNonQuery();
             }
 
         }
 
-        private DataTable GetAll(SqlConnection conexao)
+        public DataTable GetAll(string connectionString)
         {
             DataTable produtos = new DataTable();
 
-            using (var conn = conexao)
+            using (var conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                var query = "SELECT CdProduto, Descricao, Preco, IsActive, DtValidade FROM ProdutoProj";
+                var query = "SELECT CdProduto, Descricao, Preco, IsActive, DtValidade FROM ProdutoAtv3110";
                 var command = new SqlCommand(query, conn);
 
                 using (var adapter = new SqlDataAdapter(command))
@@ -82,15 +82,15 @@ namespace CadastroCliente.Repositories
 
         }
 
-        private DataTable GetProdutoPorID(string cdProduto, SqlConnection conexao)
+        public DataTable GetProdutoPorID(string cdProduto, string connectionString)
         {
             DataTable produto = new DataTable();
 
-            using (var conn = conexao)
+            using (var conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-                var query = "SELECT CdProduto, Descricao, Preco, IsActive, DtValidade FROM ProdutoProj WHERE CdProduto = @CdProduto";
+                var query = "SELECT CdProduto, Descricao, Preco, IsActive, DtValidade FROM ProdutoAtv3110 WHERE CdProduto = @CdProduto";
                 var command = new SqlCommand(query, conn);
                 command.Parameters.AddWithValue("@CdProduto", cdProduto);
 

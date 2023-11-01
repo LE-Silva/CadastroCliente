@@ -33,9 +33,6 @@
             this.tpCadastrar = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpCadastrar = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.gbDadosProduto = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -49,13 +46,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDtValidade = new System.Windows.Forms.DateTimePicker();
             this.tpListar = new System.Windows.Forms.TabPage();
-            this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tsListaCliente = new System.Windows.Forms.ToolStrip();
             this.tsddbListaC = new System.Windows.Forms.ToolStripDropDownButton();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.desmarcarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selecionarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.tcProduto.SuspendLayout();
             this.tpCadastrar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -64,8 +65,8 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tpListar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.tsListaCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // tcProduto
@@ -107,58 +108,27 @@
             // 
             // tlpCadastrar
             // 
-            this.tlpCadastrar.ColumnCount = 3;
+            this.tlpCadastrar.ColumnCount = 4;
             this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCadastrar.Controls.Add(this.btnAdicionar, 0, 0);
             this.tlpCadastrar.Controls.Add(this.btnCancelar, 2, 0);
             this.tlpCadastrar.Controls.Add(this.btnSalvar, 1, 0);
+            this.tlpCadastrar.Controls.Add(this.btnExcluir, 3, 0);
             this.tlpCadastrar.Location = new System.Drawing.Point(3, 3);
             this.tlpCadastrar.Name = "tlpCadastrar";
-            this.tlpCadastrar.RowCount = 2;
+            this.tlpCadastrar.RowCount = 1;
             this.tlpCadastrar.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpCadastrar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCadastrar.Size = new System.Drawing.Size(818, 36);
+            this.tlpCadastrar.Size = new System.Drawing.Size(818, 40);
             this.tlpCadastrar.TabIndex = 1;
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(3, 3);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(104, 28);
-            this.btnAdicionar.TabIndex = 22;
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Enabled = false;
-            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(223, 3);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 28);
-            this.btnCancelar.TabIndex = 23;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Enabled = false;
-            this.btnSalvar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(113, 3);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(104, 28);
-            this.btnSalvar.TabIndex = 24;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // gbDadosProduto
             // 
             this.gbDadosProduto.Controls.Add(this.tableLayoutPanel2);
             this.gbDadosProduto.Font = new System.Drawing.Font("Arial Narrow", 10F);
-            this.gbDadosProduto.Location = new System.Drawing.Point(3, 45);
+            this.gbDadosProduto.Location = new System.Drawing.Point(3, 49);
             this.gbDadosProduto.Name = "gbDadosProduto";
             this.gbDadosProduto.Size = new System.Drawing.Size(818, 481);
             this.gbDadosProduto.TabIndex = 2;
@@ -310,14 +280,6 @@
             this.tpListar.Text = "Listar Produtos";
             this.tpListar.UseVisualStyleBackColor = true;
             // 
-            // dgvProdutos
-            // 
-            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos.Location = new System.Drawing.Point(6, 6);
-            this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(824, 526);
-            this.dgvProdutos.TabIndex = 0;
-            // 
             // tsListaCliente
             // 
             this.tsListaCliente.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -361,6 +323,57 @@
             this.selecionarTodosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.selecionarTodosToolStripMenuItem.Text = "Selecionar Todos";
             // 
+            // dgvProdutos
+            // 
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Location = new System.Drawing.Point(6, 6);
+            this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.Size = new System.Drawing.Size(824, 526);
+            this.dgvProdutos.TabIndex = 0;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Enabled = false;
+            this.btnSalvar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(113, 3);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(104, 28);
+            this.btnSalvar.TabIndex = 24;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(223, 3);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(104, 28);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.Location = new System.Drawing.Point(3, 3);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(104, 28);
+            this.btnAdicionar.TabIndex = 22;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Enabled = false;
+            this.btnExcluir.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(333, 3);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(104, 28);
+            this.btnExcluir.TabIndex = 25;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
             // ProdutoWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,9 +394,9 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tpListar.ResumeLayout(false);
             this.tpListar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.tsListaCliente.ResumeLayout(false);
             this.tsListaCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,9 +408,6 @@
         private System.Windows.Forms.TabPage tpListar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tlpCadastrar;
-        private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.GroupBox gbDadosProduto;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox txtCodigo;
@@ -417,5 +427,9 @@
         private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem desmarcarTodosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selecionarTodosToolStripMenuItem;
+        private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

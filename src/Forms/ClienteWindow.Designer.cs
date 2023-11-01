@@ -63,6 +63,7 @@ namespace CadastroCliente
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.tcCadastrarP = new System.Windows.Forms.TabControl();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tsListaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -326,17 +327,20 @@ namespace CadastroCliente
             // 
             // tlpCadastrar
             // 
-            this.tlpCadastrar.ColumnCount = 3;
+            this.tlpCadastrar.ColumnCount = 4;
             this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCadastrar.Controls.Add(this.btnCancelar, 0, 0);
             this.tlpCadastrar.Controls.Add(this.btnSalvar, 0, 0);
             this.tlpCadastrar.Controls.Add(this.btnAdicionar, 0, 0);
+            this.tlpCadastrar.Controls.Add(this.btnExcluir, 3, 0);
             this.tlpCadastrar.Location = new System.Drawing.Point(3, 3);
             this.tlpCadastrar.Name = "tlpCadastrar";
             this.tlpCadastrar.RowCount = 1;
             this.tlpCadastrar.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpCadastrar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCadastrar.Size = new System.Drawing.Size(818, 36);
             this.tlpCadastrar.TabIndex = 2;
             // 
@@ -382,6 +386,17 @@ namespace CadastroCliente
             this.tcCadastrarP.SelectedIndex = 0;
             this.tcCadastrarP.Size = new System.Drawing.Size(844, 553);
             this.tcCadastrarP.TabIndex = 11;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Enabled = false;
+            this.btnExcluir.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(333, 3);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(104, 28);
+            this.btnExcluir.TabIndex = 24;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // ClienteWindow
             // 
@@ -440,6 +455,7 @@ namespace CadastroCliente
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.TabControl tcCadastrarP;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }
 

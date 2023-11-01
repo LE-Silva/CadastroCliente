@@ -23,5 +23,17 @@ namespace CadastroCliente
             DtValidade = dtValidade;
             Valor = valor;
         }
+
+        public char getIsActiveChar()
+        {
+            if (!IsActive) return ('N');
+            return ('S');
+        }
+        public bool getIsActiveBool(char isActiveChar)
+        {
+            if (isActiveChar == 'N')
+                return false;
+            return true;
+        }
     }
 }

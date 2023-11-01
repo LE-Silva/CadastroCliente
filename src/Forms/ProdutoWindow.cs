@@ -1,7 +1,9 @@
-﻿using System;
+﻿using CadastroCliente.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,8 +14,9 @@ namespace CadastroCliente
 {
     public partial class ProdutoWindow : Form
     {
-
-        BindingList<Produto> _listaProdutos = new BindingList<Produto> { };
+        DataTable _dataTableProduto = new DataTable();
+        ProdutoRepository _repositorio = new ProdutoRepository();
+        string connectionString = "Server=172.16.3.50;Database=SPT_LEJ_DbNutAG;User Id=sa;Password=dp;";
         public ProdutoWindow()
         {
             InitializeComponent();
@@ -21,6 +24,7 @@ namespace CadastroCliente
             btnAdicionar.Click += btnAdicionar_Click;
             btnCancelar.Click += btnCancelar_Click;
             btnSalvar.Click += btnSalvar_Click;
+            btnExcluir.Click += btnExcluir_Click;
 
             txtCodigo.EnabledChanged += txtCodigo_EnabledChanged;
             txtDescricao.EnabledChanged += txtDescricao_EnabledChanged;
@@ -30,9 +34,8 @@ namespace CadastroCliente
 
             dgvProdutos.DoubleClick += dgvProdutos_DoubleClick;
 
-            dgvProdutos.DataSource = _listaProdutos;
+            carregarGridProdutos();
         }
-
         #region cliques
         void btnAdicionar_Click(object sender, EventArgs e)
         {
@@ -45,16 +48,19 @@ namespace CadastroCliente
         }
         void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(Decimal.TryParse(txtValor.Text, out decimal parcedValue))
-            {
-                _listaProdutos.Add(new Produto(txtCodigo.Text, txtDescricao.Text, true, dtpDtValidade.Value, parcedValue));
-                alterarStatusCampos();
-                MessageBox.Show("Cadastrado com Sucesso!");
-            }
+            var produto = _repositorio.GetProdutoPorID(txtCodigo.Text, connectionString);
+            if (produto.Rows.Count > 0)
+                atualizaProduto();
             else
-            {
-                MessageBox.Show("Valor do produto inválido");
-            }
+                insereProduto();
+
+            carregarGridProdutos();
+        }
+        void btnExcluir_Click(object sender, EventArgs e)
+        {
+            _repositorio.Delete(txtCodigo.Text, connectionString);
+            carregarGridProdutos();
+            MessageBox.Show("Excluido com sucesso!");
         }
         void txtCodigo_EnabledChanged(object sender, EventArgs e)
         {
@@ -78,12 +84,17 @@ namespace CadastroCliente
         }
         void dgvProdutos_DoubleClick(object sender, EventArgs e)
         {
-            var produto = (Produto)dgvProdutos.SelectedRows[0].DataBoundItem;
-            txtCodigo.Text = produto.CdProduto.ToString();
-            txtDescricao.Text = produto.Descricao.ToString();
-            txtValor.Text = produto.Valor.ToString();
-            chkAtivo.Checked = produto.IsActive;
-            dtpDtValidade.Value = produto.DtValidade;
+            if (dgvProdutos.SelectedRows.Count == 1)
+            {
+                alterarStatusCampos();
+                DataGridViewRow selectedRow = dgvProdutos.SelectedRows[0];
+                txtCodigo.Text = selectedRow.Cells["CdProduto"].Value.ToString();
+                txtDescricao.Text = selectedRow.Cells["Descricao"].Value.ToString();
+                txtValor.Text = selectedRow.Cells["Preco"].Value.ToString();
+                chkAtivo.Checked = getIsActiveBool(selectedRow.Cells["IsActive"].Value.ToString());
+                dtpDtValidade.Value = Convert.ToDateTime(selectedRow.Cells["DtValidade"].Value);
+                tcProduto.SelectedIndex = 0;
+            }
         }
         #endregion
         void alterarStatusCampos()
@@ -91,12 +102,54 @@ namespace CadastroCliente
             //limparCampos();
             btnAdicionar.Enabled = !btnAdicionar.Enabled;
             btnSalvar.Enabled = !btnSalvar.Enabled;
+            btnExcluir.Enabled = !btnExcluir.Enabled;
             txtCodigo.Enabled = !txtCodigo.Enabled;
             txtDescricao.Enabled = !txtDescricao.Enabled;
             btnCancelar.Enabled = !btnCancelar.Enabled;
             chkAtivo.Enabled = !chkAtivo.Enabled;
             txtValor.Enabled = !txtValor.Enabled;
             dtpDtValidade.Enabled = !dtpDtValidade.Enabled;
+        }
+        bool getIsActiveBool(string isActiveChar)
+        {
+            if (isActiveChar == "N")
+                return false;
+            return true;
+        }
+
+        void atualizaProduto()
+        {
+            if (Decimal.TryParse(txtValor.Text, out decimal parcedValue))
+            {
+                _repositorio.Update(new Produto(txtCodigo.Text, txtDescricao.Text, chkAtivo.Checked, dtpDtValidade.Value, parcedValue), connectionString);
+                MessageBox.Show("Atualizado com Sucesso!");
+                _dataTableProduto = _repositorio.GetAll(connectionString);
+                dgvProdutos.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Valor do produto inválido");
+            }
+        }
+        void insereProduto()
+        {
+            if (Decimal.TryParse(txtValor.Text, out decimal parcedValue))
+            {
+                _repositorio.Create(new Produto(txtCodigo.Text, txtDescricao.Text, true, dtpDtValidade.Value, parcedValue), connectionString);
+                MessageBox.Show("Cadastrado com Sucesso!");
+                _dataTableProduto = _repositorio.GetAll(connectionString);
+                dgvProdutos.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Valor do produto inválido");
+            }
+        }
+        void carregarGridProdutos()
+        {
+            _dataTableProduto = _repositorio.GetAll(connectionString);
+            dgvProdutos.DataSource = _dataTableProduto;
+            dgvProdutos.Refresh();
         }
     }
 }
