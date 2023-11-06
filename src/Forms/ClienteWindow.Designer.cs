@@ -62,8 +62,8 @@ namespace CadastroCliente
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.tcCadastrarP = new System.Windows.Forms.TabControl();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.tcCadastrarP = new System.Windows.Forms.TabControl();
             this.tabPage2.SuspendLayout();
             this.tsListaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -331,7 +331,7 @@ namespace CadastroCliente
             this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCadastrar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 488F));
             this.tlpCadastrar.Controls.Add(this.btnCancelar, 0, 0);
             this.tlpCadastrar.Controls.Add(this.btnSalvar, 0, 0);
             this.tlpCadastrar.Controls.Add(this.btnAdicionar, 0, 0);
@@ -340,7 +340,7 @@ namespace CadastroCliente
             this.tlpCadastrar.Name = "tlpCadastrar";
             this.tlpCadastrar.RowCount = 1;
             this.tlpCadastrar.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpCadastrar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCadastrar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tlpCadastrar.Size = new System.Drawing.Size(818, 36);
             this.tlpCadastrar.TabIndex = 2;
             // 
@@ -376,17 +376,6 @@ namespace CadastroCliente
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
-            // tcCadastrarP
-            // 
-            this.tcCadastrarP.Controls.Add(this.tabPage1);
-            this.tcCadastrarP.Controls.Add(this.tabPage2);
-            this.tcCadastrarP.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.tcCadastrarP.Location = new System.Drawing.Point(12, 12);
-            this.tcCadastrarP.Name = "tcCadastrarP";
-            this.tcCadastrarP.SelectedIndex = 0;
-            this.tcCadastrarP.Size = new System.Drawing.Size(844, 553);
-            this.tcCadastrarP.TabIndex = 11;
-            // 
             // btnExcluir
             // 
             this.btnExcluir.Enabled = false;
@@ -397,6 +386,17 @@ namespace CadastroCliente
             this.btnExcluir.TabIndex = 24;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // tcCadastrarP
+            // 
+            this.tcCadastrarP.Controls.Add(this.tabPage1);
+            this.tcCadastrarP.Controls.Add(this.tabPage2);
+            this.tcCadastrarP.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.tcCadastrarP.Location = new System.Drawing.Point(12, 12);
+            this.tcCadastrarP.Name = "tcCadastrarP";
+            this.tcCadastrarP.SelectedIndex = 0;
+            this.tcCadastrarP.Size = new System.Drawing.Size(844, 553);
+            this.tcCadastrarP.TabIndex = 11;
             // 
             // ClienteWindow
             // 

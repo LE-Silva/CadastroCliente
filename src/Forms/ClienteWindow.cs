@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IntegracaoDevApp.Application.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,14 @@ namespace CadastroCliente
     {
         private BindingList<Cliente> listaClientes = new BindingList<Cliente>();
         private DataTable cliente = new DataTable();
+        private ClienteAppService _clienteAppService;
 
         public ClienteWindow()
         {
             InitializeComponent();
+
+            _clienteAppService = new ClienteAppService();
+
             //Label, Textbox, Combobox, RadioButton, Checkbox, Button
             //Codigo, Descricao, Status, CPF, TP pessoa, Cliente Premium
 
@@ -93,8 +98,9 @@ namespace CadastroCliente
             {
                 if (validaCamposEmBranco())
                 {
+                    var result = _clienteAppService.Create(txtCodigo.Text, txtNome.Text);
                     //Insert();
-                    Update();
+                    //Update();
                     //listaClientes.Add(new Cliente(txtCodigo.Text, txtNome.Text, mtxtCPF.Text, cbTpPessoa.Text, chkCliPremium.Checked, rbtnAtivo.Checked));
                     //alterarStatusCampos();
                 }

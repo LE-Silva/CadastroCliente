@@ -104,5 +104,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IntegracaoDevApp.Application\IntegracaoDevApp.Application.csproj">
+      <Project>{F59A6806-A15C-439C-9783-FCC0BBE9A6F9}</Project>
+      <Name>IntegracaoDevApp.Application</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
